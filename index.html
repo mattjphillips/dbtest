@@ -7,10 +7,14 @@
     <div id="pad" style="width:800px;height:800px;background:gray"></div>
 <script>
 
-    pad.addEventListener("pointerdown", evt => evt.preventDefault());
+    pad.addEventListener("pointerdown", evt => {
+        pad.setPointerCapture(evt.pointerId);
+    });
 
-    ["pointerdown", "pointermove", "pointerup", "mousedown", "mousemove", "mouseup"].forEach(name => pad.addEventListener(name, evt => console.log(`${name} @ ${evt.offsetX}, ${evt.offsetY}`)));
+    const PTREVTS = ["pointerdown", "pointermove", "pointerup", "mousedown", "mousemove", "mouseup"];
+    PTREVTS.forEach(name => pad.addEventListener(name, evt => console.log(`${name} @ ${evt.offsetX}, ${evt.offsetY}`)));
 
+    pad.addEventListener("click", evt => console.log("click"));
 
 </script>
 </body>
