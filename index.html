@@ -7,7 +7,7 @@
     <div id="pad" style="width:800px;height:800px;background:gray"></div>
 <script>
 
-    ["pointerdown", "pointermove", "pointerup"].forEach(name => pad.addEventListener(name, evt => console.log(`${name} @ ${evt.offsetX}, ${evt.offsetY}`)));
+    ["pointerdown", "pointermove", "pointerup", "mousedown", "mousemove", "mouseup"].forEach(name => pad.addEventListener(name, evt => console.log(`${name} @ ${evt.offsetX}, ${evt.offsetY}`)));
 
 
 </script>
